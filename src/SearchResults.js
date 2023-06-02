@@ -1,33 +1,13 @@
-import moment from "moment";
-import React from "react";
-// import moment from "moment";
-
+import { nanoid } from "nanoid";
+import React, { useState } from "react";
+import SearchResultsRow from "./SearchResultsRow";
 function SearchResults(props) {
   const bookingList = props.results.map((booking) => {
-    return (
-      <tbody key={booking.id}>
-        <tr>
-          <th scope="row">{booking.id}</th>
-          <td>{booking.title}</td>
-          <td>{booking.firstName}</td>
-          <td>{booking.surname}</td>
-          <td>{booking.email}</td>
-          <td>{booking.roomId}</td>
-          <td>{booking.checkInDate}</td>
-          <td>{booking.checkOutDate}</td>
-          <td>
-            {moment(booking.checkOutDate).diff(
-              moment(booking.checkInDate),
-              "days"
-            )}
-          </td>
-        </tr>
-      </tbody>
-    );
+    return <SearchResultsRow booking={booking} key={nanoid()} />;
   });
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">ID</th>

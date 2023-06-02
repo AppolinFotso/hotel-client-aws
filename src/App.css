@@ -81,11 +81,19 @@ tr {
 }
 
 .restaurant {
-  background-color: lightblue;
+  background-color: teal;
   padding: 1em;
   margin: 1em auto;
-  width: 20%;
+  width: 15%;
+  color: white;
 }
 .restaurant ul li {
   margin-top: 10px;
+}
+
+.on {
+  background-color: burlywood;
+}
+.off {
+  background-color: none;
 }
