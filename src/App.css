@@ -59,5 +59,18 @@ tr {
 }
 
 .card {
-  width: 18rem;
+  width: 20rem;
+}
+.card a {
+  margin-left: 50px;
+}
+
+.cities-info {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  margin-top: 1em;
+}
+.cities-info h1 {
+  text-align: center;
 }
