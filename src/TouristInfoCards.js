@@ -41,7 +41,7 @@ const london = {
 const arrayOfCityObject = [glasgow, manchester, london];
 const touristInfoCards = arrayOfCityObject.map((city) => {
   return (
-    <div className="card">
+    <div className="card" key={city.name}>
       <img
         src={city.image}
         className="card-img-top"
