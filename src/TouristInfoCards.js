@@ -58,7 +58,7 @@ const touristInfoCards = arrayOfCityObject.map((city) => {
     </div>
   );
 });
-const TouristInfoCards = (props) => {
+const TouristInfoCards = () => {
   return <div className="cities-info"> {touristInfoCards}</div>;
 };
 
