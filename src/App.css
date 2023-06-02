@@ -79,3 +79,13 @@ tr {
 .cities-info h1 {
   text-align: center;
 }
+
+.restaurant {
+  background-color: lightblue;
+  padding: 1em;
+  margin: 1em auto;
+  width: 20%;
+}
+.restaurant ul li {
+  margin-top: 10px;
+}
