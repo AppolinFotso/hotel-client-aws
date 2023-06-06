@@ -1,9 +1,20 @@
 import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import SearchResultsRow from "./SearchResultsRow";
+import CustomerProfile from "./CustomerProfile";
 function SearchResults(props) {
+  const [customerId, setCustomerId] = useState(0);
+  function getCustomerId(id) {
+    setCustomerId(id);
+  }
   const bookingList = props.results.map((booking) => {
-    return <SearchResultsRow booking={booking} key={nanoid()} />;
+    return (
+      <SearchResultsRow
+        booking={booking}
+        getCustomerId={getCustomerId}
+        key={nanoid()}
+      />
+    );
   });
   return (
     <div>
@@ -24,6 +35,7 @@ function SearchResults(props) {
         </thead>
         {bookingList}
       </table>
+      <CustomerProfile id={customerId} />
     </div>
   );
 }

@@ -27,7 +27,9 @@ function SearchResultsRow(props) {
           )}
         </td>
         <td>
-          <button>Show Profile</button>
+          <button onClick={() => props.getCustomerId(props.booking.id)}>
+            Show Profile
+          </button>
         </td>
       </tr>
     </tbody>
