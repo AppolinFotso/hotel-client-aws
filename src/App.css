@@ -97,3 +97,13 @@ tr {
 .off {
   background-color: none;
 }
+
+.displayOff {
+  display: none;
+}
+.displayOn {
+  display: block;
+}
+table {
+  font-size: 0.9em;
+}

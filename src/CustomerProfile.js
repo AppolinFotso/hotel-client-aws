@@ -2,7 +2,7 @@ import React from "react";
 
 function CustomerProfile(props) {
   return (
-    <div>
+    <div className={props.display}>
       <p>Customer {props.id} profile</p>
     </div>
   );
