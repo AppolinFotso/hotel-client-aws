@@ -11,7 +11,13 @@ const Bookings = () => {
   // });
   const [bookings, setBookings] = useState(FakeBookings);
   const search = (searchVal) => {
-    console.info("TO DO!", searchVal);
+    // console.info("TO DO!", searchVal);
+    const newBookings = bookings.filter(
+      (result) =>
+        result.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        result.surname.toLowerCase().includes(searchVal.toLowerCase())
+    );
+    setBookings(newBookings);
   };
 
   return (
