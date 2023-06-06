@@ -26,6 +26,9 @@ function SearchResultsRow(props) {
             "days"
           )}
         </td>
+        <td>
+          <button>Show Profile</button>
+        </td>
       </tr>
     </tbody>
   );
