@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
 import FakeBookings from "./data/fakeBookings.json";
+import CreateBooking from "./CreateBooking.js";
 
 const Bookings = () => {
   // useEffect(() => {
@@ -22,6 +23,9 @@ const Bookings = () => {
 
   return (
     <div className="App-content">
+      <div className="newBooking">
+        <CreateBooking />
+      </div>
       <div className="container">
         <Search search={search} />
         <SearchResults results={bookings} />
