@@ -3,10 +3,14 @@ import React, { useState } from "react";
 import SearchResultsRow from "./SearchResultsRow";
 import CustomerProfile from "./CustomerProfile";
 function SearchResults(props) {
+  const [customerName, setCustomerName] = useState("");
   const [customerId, setCustomerId] = useState(0);
+  const [customerEmail, setCustomerEmail] = useState("");
   const [display, setDisplay] = useState("displayOff");
-  function getCustomerId(id) {
+  function getCustomerId(firstName, surname, id, email) {
+    setCustomerName(`${firstName} ${surname}`);
     setCustomerId(id);
+    setCustomerEmail(email);
     if (display === "displayOff") {
       setDisplay("displayOn");
     } else {
@@ -41,7 +45,10 @@ function SearchResults(props) {
         </thead>
         {bookingList}
       </table>
-      <CustomerProfile id={customerId} display={display} />
+      <CustomerProfile
+        toggleClassName={display}
+        info={[customerName, customerId, customerEmail]}
+      />
     </div>
   );
 }

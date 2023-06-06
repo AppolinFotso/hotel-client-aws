@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: grey;
   height: 150px;
   padding: 15px;
   padding-left: 30px;
@@ -56,7 +56,7 @@ tr {
 .footer {
   padding: 20px;
   text-align: center;
-  background-color: black;
+  background-color: grey;
   color: white;
 }
 .footer ul li {
@@ -81,14 +81,18 @@ tr {
 }
 
 .restaurant {
-  background-color: black;
+  background-color: grey;
   padding: 1em;
-  margin: 1em auto;
-  width: 15%;
+  margin: 1em auto 5em;
+  width: 60.5%;
   color: white;
 }
 .restaurant ul li {
   margin-top: 10px;
+}
+.restaurant ul {
+  display: flex;
+  justify-content: space-around;
 }
 
 .on {
@@ -106,4 +110,16 @@ tr {
 }
 table {
   font-size: 0.9em;
+}
+
+.customerProfile {
+  background-color: gray;
+  color: whitesmoke;
+}
+.customerProfile div {
+  padding: 1em;
+}
+.customerName {
+  font-weight: bold;
+  font-size: 1.5em;
 }
