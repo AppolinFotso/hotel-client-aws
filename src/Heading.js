@@ -4,7 +4,8 @@ import Hotel from "./Images/Hotel-logo.png";
 const Heading = () => {
   return (
     <header className="App-header">
-      <img src={Hotel} />
+      <img src={Hotel} className="App-logo" />
+      <p>HOTEL APPOLIN</p>
     </header>
   );
 };

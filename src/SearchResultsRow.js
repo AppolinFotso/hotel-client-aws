@@ -28,14 +28,7 @@ function SearchResultsRow(props) {
         </td>
         <td>
           <button
-            onClick={() =>
-              props.getCustomerId(
-                props.booking.firstName,
-                props.booking.surname,
-                props.booking.id,
-                props.booking.email
-              )
-            }
+            onClick={() => props.getCustomerId(props.booking.id)}
             className="btn btn-primary"
           >
             Show Profile

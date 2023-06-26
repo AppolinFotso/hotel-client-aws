@@ -8,7 +8,9 @@
 }
 
 .App-header {
-  background-color: #5b5757;
+  display: flex;
+  justify-content: space-between;
+  background-color: #212123;
   height: 150px;
   padding: 15px;
   padding-left: 30px;
@@ -17,6 +19,13 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
+}
+.App-header p {
+  align-self: center;
+  margin: auto;
+  font-size: 2.5em;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 5px 0px 2px white;
 }
 .App-header img {
   width: 8em;
@@ -48,7 +57,7 @@
 }
 
 tr {
-  color: #5b5757;
+  color: #212123;
 }
 
 .results {
@@ -58,7 +67,7 @@ tr {
 .footer {
   padding: 20px;
   text-align: center;
-  background-color: #5b5757;
+  background-color: #212123;
   color: white;
 }
 .footer ul li {
@@ -83,7 +92,7 @@ tr {
 }
 
 .restaurant {
-  background-color: #5b5757;
+  background-color: #212123;
   padding: 1em;
   margin: 1em 35em 5em;
   width: 60.5%;
@@ -99,7 +108,8 @@ tr {
 }
 
 .on {
-  background-color: burlywood;
+  background-color: #212123;
+  color: white;
 }
 .off {
   background-color: none;
@@ -114,9 +124,14 @@ tr {
 table {
   font-size: 0.9em;
 }
-
+table thead tr th {
+  background-color: #212123;
+  color: white;
+  border: 1px solid white;
+  text-align: center;
+}
 .customerProfile {
-  background-color: #5b5757;
+  background-color: #212123;
   color: whitesmoke;
   border-radius: 1em;
 }
@@ -129,7 +144,7 @@ table {
 }
 .createBooking {
   margin-left: 1em;
-  background-color: #5b5757;
+  background-color: #212123;
   padding: 1em;
   color: whitesmoke;
   border-radius: 1em;
@@ -140,4 +155,46 @@ table {
 }
 .createBooking ul li {
   list-style: none;
+}
+
+h1,
+h2 {
+  color: rgb(0, 132, 255);
+  box-shadow: 5px 5px 2px grey;
+  text-shadow: 1px 0px 2px gray;
+}
+
+h3,
+h4 {
+  color: rgb(0, 132, 255);
+  box-shadow: 5px 5px 2px grey;
+  text-shadow: 1px 0px 2px gray;
+}
+
+.error {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: white;
+  padding: 5em;
+  color: red;
+  font-size: 2em;
+}
+
+.error p span {
+  color: green;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: white;
+  padding: 5em;
+  color: green;
+  font-size: 2em;
 }

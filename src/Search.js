@@ -3,10 +3,16 @@ import SearchButton from "./SearchButton";
 const Search = (props) => {
   const [searchInput, setSearchInput] = useState("");
   function handleSearchInput(e) {
-    setSearchInput(e.target.value);
-    // console.log(e.target.value);
+    if (e.target.value === "") {
+      let x = Math.random();
+      props.emptyInput(x);
+    } else {
+      setSearchInput(e.target.value);
+      // console.log(e.target.value);
+    }
   }
   //
+
   function handleSubmit(e) {
     e.preventDefault();
     props.search(searchInput);
@@ -27,7 +33,7 @@ const Search = (props) => {
                 id="customerName"
                 className="form-control"
                 placeholder="Customer name"
-                value={searchInput}
+                // value={searchInput}
                 onChange={handleSearchInput}
               />
               <SearchButton />
