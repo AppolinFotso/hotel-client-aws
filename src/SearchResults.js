@@ -4,7 +4,7 @@ import SearchResultsRow from "./SearchResultsRow";
 import CustomerProfile from "./CustomerProfile";
 import sortMe from "./sortTable";
 function SearchResults(props) {
-  const [customerId, setCustomerId] = useState(1);
+  const [customerId, setCustomerId] = useState(0);
   const [display, setDisplay] = useState("displayOff");
 
   function getCustomerId(id) {

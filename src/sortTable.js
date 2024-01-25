@@ -1,5 +1,5 @@
 function sortMe(num) {
-  console.log(num);
+  // console.log(num);
   let table, rows, currentCell, cellBelow, exchangeRows, index;
 
   let countExchange = 0;
@@ -23,7 +23,7 @@ function sortMe(num) {
         }
         currentCell = rows[i].children[num].innerText;
         cellBelow = rows[i + 1].children[num].innerText;
-        console.log(currentCell, cellBelow);
+        // console.log(currentCell, cellBelow);
         if (direction === "up") {
           if (currentCell > cellBelow) {
             exchangeRows = true;
@@ -48,7 +48,7 @@ function sortMe(num) {
       }
       if (countExchange === 0 && direction === "up") {
         direction = "down";
-        console.log(countExchange);
+        // console.log(countExchange);
         rowsHaveDifferentValue = true;
       }
     }

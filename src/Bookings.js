@@ -9,9 +9,10 @@ import LoadingPage from "./LoadingPage.js";
 const Bookings = (props) => {
   const [bookings, setBookings] = useState([]);
   const [ifSearchInputIsEmpty, setForEmptyInput] = useState(0);
+  const [newBooking, setNewBooking] = useState("false");
 
   useEffect(() => {
-    fetch("https://cyf-react.glitch.me")
+    fetch("http://localhost:3000/")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -23,22 +24,22 @@ const Bookings = (props) => {
         const urlError = "error";
         setBookings(urlError);
       });
-  }, [ifSearchInputIsEmpty]);
+  }, [ifSearchInputIsEmpty, newBooking]);
 
   //
-
-  function getCustomerInfo(info) {
-    setBookings(info);
-  }
 
   const search = (searchVal) => {
     // console.info("TO DO!", searchVal);
     const newBookings = bookings.filter(
       (result) =>
-        result.firstName.toLowerCase().includes(searchVal.toLowerCase()) ||
+        result.firstname.toLowerCase().includes(searchVal.toLowerCase()) ||
         result.surname.toLowerCase().includes(searchVal.toLowerCase())
     );
-    setBookings(newBookings);
+    if (newBookings.length == 0) {
+      return "";
+    } else {
+      setBookings(newBookings);
+    }
   };
   // load error page
   if (bookings === "error") {
@@ -53,7 +54,7 @@ const Bookings = (props) => {
     return (
       <div className="App-content">
         <div className="newBooking">
-          <CreateBooking getCustomerinfo={getCustomerInfo} />
+          <CreateBooking getCustomerinfo={setNewBooking} />
         </div>
         <div className="container">
           <Search search={search} emptyInput={setForEmptyInput} />

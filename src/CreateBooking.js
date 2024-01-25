@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FakeBookings from "./data/fakeBookings.json";
 
 function CreateBooking(props) {
   const [id, setId] = useState(0);
@@ -20,12 +19,12 @@ function CreateBooking(props) {
     {
       id: id,
       title: title,
-      firstName: firstName,
+      firstname: firstName,
       surname: surname,
       email: email,
-      roomId: roomId,
-      checkInDate: checkin,
-      checkOutDate: checkout,
+      room_id: roomId,
+      check_in_date: checkin,
+      check_out_date: checkout,
     },
   ];
   return (
@@ -34,8 +33,23 @@ function CreateBooking(props) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const newInfo = FakeBookings.concat(customerInfo);
-          props.getCustomerinfo(newInfo);
+          if (customerInfo.id != 0) {
+            fetch("http://localhost:3000", {
+              method: "POST",
+              mode: "cors",
+              cache: "no-cache",
+              credentials: "same-origin",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(customerInfo),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                console.log(data);
+                props.getCustomerinfo(data);
+              });
+          }
         }}
       >
         <ul>
