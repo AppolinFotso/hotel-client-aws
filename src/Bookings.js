@@ -12,7 +12,7 @@ const Bookings = (props) => {
   const [newBooking, setNewBooking] = useState("false");
 
   useEffect(() => {
-    fetch("http://localhost:3000/")
+    fetch("https://hotel-server-x6k7.onrender.com")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
