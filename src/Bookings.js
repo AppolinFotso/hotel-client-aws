@@ -47,7 +47,17 @@ const Bookings = (props) => {
   }
   // load waiting page
   if (bookings.length === 0) {
-    return <LoadingPage />;
+    return (
+      <div className="App-content">
+        <div className="newBooking">
+          <CreateBooking getCustomerinfo={setNewBooking} />
+        </div>
+        <div className="container">
+          <Search search={search} emptyInput={setForEmptyInput} />
+          <LoadingPage />
+        </div>
+      </div>
+    );
   }
   //
   else {

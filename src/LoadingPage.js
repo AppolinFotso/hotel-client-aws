@@ -1,12 +1,10 @@
 import react from "react";
+import Hotel from "./Images/Hotel-logo.png";
 
 function LoadingPage(props) {
   return (
     <div className="loading">
-      <p> Please wait!</p>
-      <p>
-        Page loading<span>...............</span>
-      </p>
+      <img src={Hotel} className="loading-image" />
     </div>
   );
 }
