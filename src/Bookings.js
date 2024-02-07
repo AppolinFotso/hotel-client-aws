@@ -12,7 +12,7 @@ const Bookings = (props) => {
   const [newBooking, setNewBooking] = useState("false");
 
   useEffect(() => {
-    fetch("https://hotel-server-x6k7.onrender.com")
+    fetch("http://ec2-18-135-98-65.eu-west-2.compute.amazonaws.com:3000")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);

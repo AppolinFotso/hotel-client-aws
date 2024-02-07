@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 function CustomerProfile(props) {
   const [customer, setCustomer] = useState("");
   useEffect(() => {
-    fetch(`https://hotel-server-x6k7.onrender.com/${props.info}`)
+    fetch(
+      `http://ec2-18-135-98-65.eu-west-2.compute.amazonaws.com:3000/${props.info}`
+    )
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
